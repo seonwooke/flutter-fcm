@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
@@ -23,6 +24,8 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
   runApp(const MyApp());
@@ -41,6 +44,16 @@ class MyApp extends StatelessWidget {
             initialRoute: AppRoutes.instance.initRoute,
             getPages: AppPages.instance.pages,
             defaultTransition: Transition.native,
+            navigatorObservers: [
+              FirebaseAnalyticsObserver(
+                analytics: FirebaseAnalytics.instance,
+                onError: (error) {
+                  if (kDebugMode) {
+                    print(error);
+                  }
+                },
+              )
+            ],
           )),
     );
   }

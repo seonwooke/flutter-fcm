@@ -1,7 +1,10 @@
 // ignore: depend_on_referenced_packages
+import 'package:flutter/foundation.dart';
 import 'package:timezone/data/latest_all.dart' as timezone;
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+
+import '../controllers/controllers.dart';
 
 class NotificationService {
   static final NotificationService _instance =
@@ -26,7 +29,7 @@ class NotificationService {
     timezone.initializeTimeZones();
 
     const initializationSettingsAndroid =
-        AndroidInitializationSettings('@mipmap/launcher_icon');
+        AndroidInitializationSettings('@mipmap/ic_launcher');
 
     const initializationSettings = InitializationSettings(
       android: initializationSettingsAndroid,
@@ -50,5 +53,10 @@ class NotificationService {
       message.notification!.body,
       notificationDetails,
     );
+
+    if (kDebugMode) {
+      print('[GET] FCM on message/title : ${message.notification!.title}');
+      print('[GET] FCM on message/body  : ${message.notification!.body}');
+    }
   }
 }

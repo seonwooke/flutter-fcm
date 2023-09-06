@@ -15,7 +15,7 @@ class NotificationController extends GetxController {
   Future<void> init() async {
     String? token = await _messaging.getToken();
     if (kDebugMode) {
-      print("[SUCCESS] FCM token: $token");
+      print("[GET] FCM token: $token");
     }
 
     if (token != null &&
