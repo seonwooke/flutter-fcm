@@ -50,6 +50,7 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-fcm-18bb1',
     authDomain: 'flutter-fcm-18bb1.firebaseapp.com',
     storageBucket: 'flutter-fcm-18bb1.appspot.com',
+    measurementId: 'G-3L5TWWQEF8',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -66,6 +67,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '270246260737',
     projectId: 'flutter-fcm-18bb1',
     storageBucket: 'flutter-fcm-18bb1.appspot.com',
+    androidClientId: '270246260737-d3hp4012fgamk8ic6unm8q5r8r89mu06.apps.googleusercontent.com',
     iosClientId: '270246260737-tu7munp5fenifuagn3am4tgvhq2hu40u.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterFcm',
   );
@@ -76,6 +78,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '270246260737',
     projectId: 'flutter-fcm-18bb1',
     storageBucket: 'flutter-fcm-18bb1.appspot.com',
+    androidClientId: '270246260737-d3hp4012fgamk8ic6unm8q5r8r89mu06.apps.googleusercontent.com',
     iosClientId: '270246260737-bt8pd7d86m9jqht3e5q2t5ujk626akae.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterFcm.RunnerTests',
   );
